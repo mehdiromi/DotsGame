@@ -1,104 +1,44 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Dots</title>
-<script language="JavaScript"  src="apps.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dots</title>
+    <script language="JavaScript" src="js/logic.js"></script>
+    <script language="JavaScript" src="js/board.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
 </head>
-
 <body>
-    <CENTER>
-<SCRIPT LANGUAGE="JavaScript">
-<!-- Begin
+    <center>
+        Canvas version of  the board <br />
+        <canvas id="canvas" width="800" height="800"></canvas>
+        <br />
+        <br />
+        <a href="logic.html">Go to Logic</a>
 
-var m;
-var n;
-
-n0 = new Image();
-n1 = new Image();
-n2 = new Image();
-n3 = new Image();
-
-n0.src = "red.gif";
-n1.src = "blue.gif";
-n2.src = "black.gif";
-n3.src = "blank.gif";
-
-var flag = [n0.src,n1.src];
-var player=1;
-var score=[0,0];
-var hedge=[];
-var vedge=[];
-var box=[];
-var nn,x,y,zz,count,loop,u,v;
-
-function getInput() {
-	//do {
-	//	m=window.prompt("Enter number of rows between 3 and 9.","4");
-	//} while (m<3 || m>9);
-	//do {
-	//	n=window.prompt("Enter number of columns between 3 and 9.","4");
-	//} while (n<3 || n>9);
-
-
-	m = 8;
-	n = 8;
-
-	for (var i=0;i<=m;i++) {
-		hedge[i]=[];
-		for (var j=0;j<n;j++) hedge[i][j]=0;
-	}
-	for (i=0;i<m;i++) {
-		vedge[i]=[];
-		for (j=0;j<=n;j++) vedge[i][j]=0;
-	}
-	for (i=0;i<m;i++) {
-		box[i]=[];
-		for (j=0;j<n;j++) box[i][j]=0;
-	}
-	nn=2*n+1;
-}
-getInput();
-
-document.write('<form name="f">')
-document.write('<table bgcolor=#ffffff border="0" cellpadding="0" cellspacing="0"><tr>')
-for (i=0;i<m;i++) {
-	for (j=0;j<n;j++) {
-		document.write('<td align=center><img src="black.gif" border=0 width=8 height=8></td>');
-		document.write('<td align=center><a href="javascript:hmove('+i+','+j+')"'
-		+' onMouseover="javascript:if (hedge['+i+']['+j+']<1) document.he'+i+j+'.src=n0.src"'
-		+' onMouseout="javascript:if (hedge['+i+']['+j+']<1) document.he'+i+j+'.src=n3.src">'
-		+'<img src="blank.gif" name="he'+i+j+'" border=0 width=36 height=8></a></td>');
-	}
-	document.write('<td align=center><img src="black.gif" width=8 height=8></td></tr><tr>');
-	for (j=0;j<n;j++) {
-		document.write('<td align=center><a href="javascript:vmove('+i+','+j+')"'
-		+' onMouseover="javascript:if (vedge['+i+']['+j+']<1) document.ve'+i+j+'.src=n0.src"'
-		+' onMouseout="javascript:if (vedge['+i+']['+j+']<1) document.ve'+i+j+'.src=n3.src">'
-		+'<img src="blank.gif" name="ve'+i+j+'" border=0 width=8 height=36></a></td>');
-		document.write('<td align=center><img name="sq'+i+j
-		+'" src="blank.gif" border=0 width=36 height=36></td>');
-	}
-		document.write('<td align=center><a href="javascript:vmove('+i+','+j+')"'
-		+' onMouseover="javascript:if (vedge['+i+']['+j+']<1) document.ve'+i+j+'.src=n0.src"'
-		+' onMouseout="javascript:if (vedge['+i+']['+j+']<1) document.ve'+i+j+'.src=n3.src">'
-		+'<img src="blank.gif" name="ve'+i+j+'" border=0 width=8 height=36></a></td></tr>');
-}
-for (j=0;j<n;j++) {
-	document.write('<td align=center><img src="black.gif" border=0 width=8 height=8></td>');
-		document.write('<td align=center><a href="javascript:hmove('+i+','+j+')"'
-		+' onMouseover="javascript:if (hedge['+i+']['+j+']<1) document.he'+i+j+'.src=n0.src"'
-		+' onMouseout="javascript:if (hedge['+i+']['+j+']<1) document.he'+i+j+'.src=n3.src">'
-		+'<img src="blank.gif" name="he'+i+j+'" border=0 width=36 height=8></a></td>');
-}
-document.write('<td align=center><img src="black.gif" border=0 width=8 height=8></td></tr>');
-document.write('</table><hr>');
-document.write('<INPUT TYPE="button" VALUE="Reset" onClick="restart()">');
-document.write('</form>');
-
- //  End -->
-</script>
-
-</center>
-
-
+    </center>
 </body>
 </html>
+
+<script>
+    var clicks = 0;
+    var lastClick = [0, 0];
+    //document.getElementById('canvas').addEventListener('click', drawLine, false);
+
+    var radius = 6;
+    var x = 20;
+    var y = 20;
+    var width = 3;
+    var line = 50;
+    var canvasW = 800;
+    var canvasH = 800;
+    var fillStyle = 'green';
+    var strockStyle = '#003300'
+    var gap = 2 * radius + 2 * width + line;
+    for (i = 0; i < canvasW; i = i + gap) {
+        for (j = 0; j < canvasH; j = j + gap) {
+            drawCircle(x + i, y + j, radius, width, fillStyle, strockStyle);
+        }
+    }
+</script>

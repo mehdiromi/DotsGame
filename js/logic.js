@@ -1,6 +1,65 @@
-	
+
+function init(m, n) { //init the logic
+
+    for (var i = 0; i <= m; i++) {
+        hedge[i] = [];
+        for (var j = 0; j < n; j++) hedge[i][j] = 0;
+    }
+    for (i = 0; i < m; i++) {
+        vedge[i] = [];
+        for (j = 0; j <= n; j++) vedge[i][j] = 0;
+    }
+    for (i = 0; i < m; i++) {
+        box[i] = [];
+        for (j = 0; j < n; j++) box[i][j] = 0;
+    }
+}
+
+
+
+function drawFormLogic()  //simple html version to get some visual on the basics
+{
+    document.write('<form name="f">')
+    document.write('<table bgcolor=#ffffff border="0" cellpadding="0" cellspacing="0"><tr>')
+    for (i = 0; i < m; i++) {
+        for (j = 0; j < n; j++) {
+            document.write('<td align=center><img src="images/black.gif" border=0 width=8 height=8></td>');
+            document.write('<td align=center><a href="javascript:hmove(' + i + ',' + j + ')"'
+            + ' onMouseover="javascript:if (hedge[' + i + '][' + j + ']<1) document.he' + i + j + '.src=n0.src"'
+            + ' onMouseout="javascript:if (hedge[' + i + '][' + j + ']<1) document.he' + i + j + '.src=n3.src">'
+            + '<img src="images/blank.gif" name="he' + i + j + '" border=0 width=36 height=8></a></td>');
+        }
+        document.write('<td align=center><img src="images/black.gif" width=8 height=8></td></tr><tr>');
+        for (j = 0; j < n; j++) {
+            document.write('<td align=center><a href="javascript:vmove(' + i + ',' + j + ')"'
+            + ' onMouseover="javascript:if (vedge[' + i + '][' + j + ']<1) document.ve' + i + j + '.src=n0.src"'
+            + ' onMouseout="javascript:if (vedge[' + i + '][' + j + ']<1) document.ve' + i + j + '.src=n3.src">'
+            + '<img src="images/blank.gif" name="ve' + i + j + '" border=0 width=8 height=36></a></td>');
+            document.write('<td align=center><img name="sq' + i + j
+            + '" src="images/blank.gif" border=0 width=36 height=36></td>');
+        }
+        document.write('<td align=center><a href="javascript:vmove(' + i + ',' + j + ')"'
+        + ' onMouseover="javascript:if (vedge[' + i + '][' + j + ']<1) document.ve' + i + j + '.src=n0.src"'
+        + ' onMouseout="javascript:if (vedge[' + i + '][' + j + ']<1) document.ve' + i + j + '.src=n3.src">'
+        + '<img src="images/blank.gif" name="ve' + i + j + '" border=0 width=8 height=36></a></td></tr>');
+    }
+    for (j = 0; j < n; j++) {
+        document.write('<td align=center><img src="images/black.gif" border=0 width=8 height=8></td>');
+        document.write('<td align=center><a href="javascript:hmove(' + i + ',' + j + ')"'
+        + ' onMouseover="javascript:if (hedge[' + i + '][' + j + ']<1) document.he' + i + j + '.src=n0.src"'
+        + ' onMouseout="javascript:if (hedge[' + i + '][' + j + ']<1) document.he' + i + j + '.src=n3.src">'
+        + '<img src="images/blank.gif" name="he' + i + j + '" border=0 width=36 height=8></a></td>');
+    }
+    document.write('<td align=center><img src="images/black.gif" border=0 width=8 height=8></td></tr>');
+    document.write('</table>');
+    //document.write('<INPUT TYPE="button" VALUE="Reset" onClick="restart()">');
+    document.write('</form>');
+
+}
+
+
 function restart() {
-	var i,j,x;
+	var i, j, x;
 	score[0]=0;
 	score[1]=0;
 	for (i=0;i<=m;i++) {
