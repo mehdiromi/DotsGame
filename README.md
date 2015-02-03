@@ -17,10 +17,15 @@ Team:  Mehdi Romi, Ali Aminfar
 
 Things we use:
 
-1- Trello: We use  Trello as out Kanban board for project management.
-2- GenMyModel:   This is our architecture and design tool    [https://repository.genmymodel.com/mehdiromi/Dots](https://repository.genmymodel.com/mehdiromi/Dots)
-3- Git:   Source Control
-4- Visual Studio:  Code editor
+1-Trello: We use  Trello as out Kanban board for project management.
+2-GenMyModel:   This is our architecture and design tool    [https://repository.genmymodel.com/mehdiromi/Dots](https://repository.genmymodel.com/mehdiromi/Dots)
+3-Git:   Source Control
+4-Visual Studio:  Code editor
+
+
+Here is a draft Class Diagram of the next version of the game at at the moment I'm working on.
+
+![https://api.genmymodel.com/projects/_vY0l4KKyEeScLuNN63kNaQ/diagrams/_vY2bEqKyEeScLuNN63kNaQ/jpeg Class Diagram](https://api.genmymodel.com/projects/_vY0l4KKyEeScLuNN63kNaQ/diagrams/_vY2bEqKyEeScLuNN63kNaQ/jpeg)
 
 
 
