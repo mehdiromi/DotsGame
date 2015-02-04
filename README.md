@@ -29,5 +29,13 @@ Here is a draft Class Diagram of the next version of the game at at the moment I
 
 
 
+#####Progress:
+
+-Vertical and horizontal clicks
+
+![http://mromi.com/dotsgame/progress/1.png](http://mromi.com/dotsgame/progress/1.png)
 
 
+-Bug at the edge on the board
+
+![http://mromi.com/dotsgame/progress/bug1.png](http://mromi.com/dotsgame/progress/bug1.png)
