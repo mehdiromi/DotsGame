@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=no, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dots</title>
-    <script language="JavaScript" src="js/logic.js"></script>
     <script language="JavaScript" src="js/board.js"></script>
     <link href="css/style.css" rel="stylesheet" />
 </head>
@@ -24,21 +23,12 @@
 <script>
     var clicks = 0;
     var lastClick = [0, 0];
-    //document.getElementById('canvas').addEventListener('click', drawLine, false);
 
-    var radius = 6;
-    var x = 20;
-    var y = 20;
-    var width = 3;
-    var line = 50;
-    var canvasW = 800;
-    var canvasH = 800;
-    var fillStyle = 'green';
-    var strockStyle = '#003300'
-    var gap = 2 * radius + 2 * width + line;
-    for (i = 0; i < canvasW; i = i + gap) {
-        for (j = 0; j < canvasH; j = j + gap) {
-            drawCircle(x + i, y + j, radius, width, fillStyle, strockStyle);
-        }
-    }
+    initDots();
+
+    //Add click / tap event listener to draw line between two dots
+    document.getElementById('canvas').addEventListener('click', drawLine, false);
+
+
+    
 </script>
