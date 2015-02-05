@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dots</title>
+
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+
     <script language="JavaScript" src="js/board.js"></script>
     <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
     <center>
-        Canvas version of  the board <br />
-        <canvas id="canvas" width="800" height="800"></canvas>
-        <br />
-        <br />
-        <a href="logic.html">Go to Logic</a>
+        Layered Canvas version of  the board <br />
+        <!--<canvas id="canvas" class="board" width="800" height="800"></canvas>
+        <br />-->
 
+        <div class="newboard">
+            <!--<canvas id="layer0" class="layer background layer0"></canvas>-->
+            <canvas id="layer1" width="800" height="800" class="layer layer1"></canvas>
+            <!--<canvas id="layer2" width="800" height="800" class="layer layer2"></canvas>-->
+        </div>
+
+        <br /><a href="logic.html">Go to Logic</a><br />
     </center>
+
 </body>
 </html>
 
@@ -27,8 +37,8 @@
     initDots();
 
     //Add click / tap event listener to draw line between two dots
-    document.getElementById('canvas').addEventListener('click', drawLine, false);
+    document.getElementById('layer1').addEventListener('click', drawLine, false);
 
 
-    
+
 </script>

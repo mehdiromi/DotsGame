@@ -29,83 +29,54 @@ function drawLine(e) {
     var canvasH = 800;
     var fillStyle = 'green';
     //var strockStyle = '#003300'
-    //var gap = 2 * radius + 2 * width + line;
 
 
-    var isVertial = false;
+    var xAbs = xBorder + Math.round((xClick - xBorder) / line) * line;
+    var yAbs = yBorder + Math.round((yClick - yBorder) / line) * line;
 
-    var xAbs =  xBorder +  Math.round((xClick - xBorder) / line) * line;
-
-    //alert('Abs : ' + xAbs + '  ,  actual :' + xClick);
     var xDiff = xClick - xAbs ;
     if (xDiff <0) {
         xDiff = -1 * xDiff;
     }
-    var yAbs = yBorder + Math.round((yClick - yBorder) / line) * line;
 
-    //alert('Abs : ' + yAbs + '  ,  actual :' + yClick);
     var yDiff = yClick - yAbs;
     if (yDiff < 0) {
         yDiff = -1 * yDiff;
     }
 
+    var isVertial = false;
     if (xDiff < yDiff) {
         isVertial = true;
     }
-
-
 
     var startPointX = 0;
     var startPointY = 0;
 
     if (isVertial) {
-        //alert('vert');
-
+        //Vertial line 
         startPointX = Math.round((xClick - xBorder) / line);
         startPointY = parseInt((yClick - yBorder) / line);
-
-        //vertial line 
         var x1 =  xBorder + startPointX * line;
         var y1 = width + yBorder + startPointY * line;
-
         var y2 = y1 + line - 2 * width;
         var x2 = x1;
     }
     else {
-         //alert('hor');
+        //Horizontal line 
          startPointX = parseInt((xClick - xBorder) / line);
          startPointY = Math.round((yClick - yBorder) / line);
-
-        //Horizontal line 
          var x1 = width + xBorder + startPointX * line;
          var y1 = yBorder + startPointY * line;
-
          var x2 = x1 + line - 2 * width;
          var y2 = y1;
-
     }
  
-   
-   
-
-   
-
-    //alert(startPointX);
-    //alert(xDotLocation);
-
     context.beginPath();
-
     context.moveTo(x1, y1);
-    context.lineTo(x2, y2);
-
-    //context.moveTo(xBorder +  x2 * (x0 + line + radius + width),  yDotLocation * (x0 + line + radius + width));
-    //context.lineTo((xDotLocation + 1) * (x0 + line + radius + width), yDotLocation * (x0 + line + radius + width) );
-    //context.lineWidth = line + 2 * (width + radius);
-    context.lineWidth = 3;
-    context.strokeStyle = 'red';
+    context.lineTo(x2, y2);    
+    context.lineWidth = 3;  //context.lineWidth = line + 2 * (width + radius);
+    context.strokeStyle = 'black';
     context.stroke();
-
-
 
 
     //if (clicks != 1) {
@@ -120,23 +91,9 @@ function drawLine(e) {
 
     //    clicks = 0;
     //}
-
     //lastClick = [x, y];
-}
-                
-function drawCircle(x,y, radius, width, fillStyle, strockStyle ) {
-    var canvas = document.getElementById('canvas');
-    context = canvas.getContext('2d');
-    context.beginPath();
-    context.arc(x, y, radius, 0, 2 * Math.PI, false);
-    context.fillStyle = fillStyle;
-    context.fill();
-    context.lineWidth = width;
-    context.strokeStyle = strockStyle ;
-    context.stroke();
-}
 
-
+}
 
 function initDots() {
     //Draw dots on the board
@@ -148,14 +105,23 @@ function initDots() {
     var canvasW = 800;
     var canvasH = 800;
     var fillStyle = 'white';
-    var strockStyle = '#003300'
-    //var gap = 2 * radius + 2 * width + line;
-    var gap = line;
+    var strockStyle = '#003300'    
+    var gap = line;  //var gap = 2 * radius + 2 * width + line;
+    var canvas = document.getElementById('layer1');
+    context = canvas.getContext('2d');
     for (i = 0; i < canvasW; i = i + gap) {
         for (j = 0; j < canvasH; j = j + gap) {
-            drawCircle(xBorder + i, yBorder + j, radius, width, fillStyle, strockStyle);
+            drawCircle(context, xBorder + i, yBorder + j, radius, width, fillStyle, strockStyle);
         }
     }
 }
 
-
+function drawCircle(context, x, y, radius, width, fillStyle, strockStyle) {
+    context.beginPath();
+    context.arc(x, y, radius, 0, 2 * Math.PI, false);
+    context.fillStyle = fillStyle;
+    context.fill();
+    context.lineWidth = width;
+    context.strokeStyle = strockStyle;
+    context.stroke();
+}

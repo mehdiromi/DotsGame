@@ -3,6 +3,27 @@
 border: 0;
 }
 
-canvas {
+.newboard {
+    /*border: 3px solid rgb(12, 99, 32);*/
+    /*position: relative;*/
+    height: 800px;
+    width:  800px;
+}
+.layer {
+    /*position: absolute; left: 0; top: 0;*/ 
+    height: 800px;
+    width:  800px;
+}
+.layer1 {
+    z-index: 0;
+}
+.layer2 {
+    z-index: 1;
+}
+
+
+.board {
     border: 3px solid rgb(12, 99, 32);
 }
+
+
