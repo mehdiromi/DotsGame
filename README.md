@@ -31,6 +31,12 @@ Here is a draft Class Diagram of the next version of the game at at the moment I
 
 #####Progress:
 
+-Added injectable theme, background, layered design and changed javascript structure to use class.
+
+
+![http://mromi.com/dotsgame/progress/theme.png](http://mromi.com/dotsgame/progress/theme.png)
+
+
 -Vertical and horizontal clicks
 
 ![http://mromi.com/dotsgame/progress/1.png](http://mromi.com/dotsgame/progress/1.png)
