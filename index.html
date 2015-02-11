@@ -6,39 +6,26 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dots</title>
-
-    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
-
     <script language="JavaScript" src="js/board.js"></script>
+    <script language="JavaScript" src="js/theme.js"></script>
     <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
     <center>
-        Layered Canvas version of  the board <br />
-        <!--<canvas id="canvas" class="board" width="800" height="800"></canvas>
-        <br />-->
-
-        <div class="newboard">
-            <!--<canvas id="layer0" class="layer background layer0"></canvas>-->
-            <canvas id="layer1" width="800" height="800" class="layer layer1"></canvas>
-            <!--<canvas id="layer2" width="800" height="800" class="layer layer2"></canvas>-->
+        <div id="board" class="board">
+            <canvas width="800" height="800" id="background"  class="layer bg"    >This device does not support HTML5 Canvas.</canvas>
+            <canvas width="800" height="800" id="theme"       class="layer theme" ></canvas>
+            <canvas width="800" height="800" id="theme2"      class="layer theme2"></canvas>
+            <canvas width="800" height="800" id="dots"        class="layer dots"  ></canvas>
+            <canvas width="800" height="800" id="lines"       class="layer lines" ></canvas>
         </div>
-
-        <br /><a href="logic.html">Go to Logic</a><br />
+        <br />
+        
+        <textarea id="log" class="log"></textarea>
     </center>
-
 </body>
 </html>
-
 <script>
-    var clicks = 0;
-    var lastClick = [0, 0];
-
-    initDots();
-
-    //Add click / tap event listener to draw line between two dots
-    document.getElementById('layer1').addEventListener('click', drawLine, false);
-
-
-
+    var nproj = new proj('board', 'background',  'theme', 'theme2', 'dots' , 'lines', 6, 6);
 </script>
+

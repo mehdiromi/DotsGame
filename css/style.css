@@ -1,29 +1,64 @@
-* {
+
+/*clear */
+html body * span.clear,html body * div.clear,html body * li.clear,html body * dd.clear {
+	background:none; border:0;clear:both;display:block;float: none;font-size:0;list-style:none;margin:0;padding:0;overflow:hidden;visibility:hidden;width:0;height:0;
+}
+
+/* canvas flick on devices */
+* { 
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 border: 0;
 }
 
-.newboard {
-    /*border: 3px solid rgb(12, 99, 32);*/
-    /*position: relative;*/
-    height: 800px;
-    width:  800px;
-}
-.layer {
-    /*position: absolute; left: 0; top: 0;*/ 
-    height: 800px;
-    width:  800px;
-}
-.layer1 {
-    z-index: 0;
-}
-.layer2 {
-    z-index: 1;
+
+
+.log {
+    border: 1px solid rgb(12, 99, 32);
+    position:relative;
+    height: 200px;
+    width:  100%;
+    z-index: -1;
+    top: 201px;
+    left: 0;
+
 }
 
 
 .board {
-    border: 3px solid rgb(12, 99, 32);
+    border: 1px solid rgb(12, 99, 32);
+    position: relative;
+    height: 800px;
+    width:  800px;
+    
+}
+.layer {
+    background-color:transparent;
+    position: absolute; left: 0; top: 0;
+    height: 800px;
+    width:  800px;
 }
 
+.bg {
+    z-index: 0;
+    background-color:#f1f7f8;
+    /*background-color:transparent;*/
+    /*border: 2px solid rgb(12, 99, 32);*/
+}
 
+.theme {
+    background-color:transparent;
+    z-index: 1;
+}
+.theme2 {
+    background-color:transparent;
+    z-index: 2;
+}
+
+.dots {
+    background-color:transparent;
+    z-index: 3;
+}
+.lines {
+    background-color:transparent;
+    z-index: 4;
+}
