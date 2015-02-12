@@ -31,17 +31,22 @@ Here is a draft Class Diagram of the next version of the game at at the moment I
 
 #####Progress:
 
+
+-Added sample webworkers for background calculations 
+
+
+-Added theme background, great wall
+![http://mromi.com/dotsgame/progress/background2.png](http://mromi.com/dotsgame/progress/background2.png)
+
+-Added dotted lines as a hint for user between dots
+![http://mromi.com/dotsgame/progress/dottedlines.PNG](http://mromi.com/dotsgame/progress/dottedlines.PNG)
+
+
 -Added injectable theme, background, layered design and changed javascript structure to use class.
-
-
 ![http://mromi.com/dotsgame/progress/theme.png](http://mromi.com/dotsgame/progress/theme.png)
 
-
 -Vertical and horizontal clicks
-
 ![http://mromi.com/dotsgame/progress/1.png](http://mromi.com/dotsgame/progress/1.png)
 
-
 -Bug at the edge on the board
-
 ![http://mromi.com/dotsgame/progress/bug1.png](http://mromi.com/dotsgame/progress/bug1.png)

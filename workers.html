@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dots</title>
+    <script language="JavaScript" src="js/board.js"></script>
+    <script language="JavaScript" src="js/theme.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <p>Count numbers: <div id="result"></div></p>
+    <button onclick="startWorker()">Start Worker</button>
+    <button onclick="stopWorker()">Stop Worker</button>
+    <br><br>
+
+    <script>
+        var w;
+
+        function startWorker() {
+            if (typeof (Worker) !== "undefined") {
+                if (typeof (w) == "undefined") {
+                    w = new Worker("js/demo_workers.js");
+                    w.postMessage('Start');
+                }
+                w.onmessage = function (event) {
+                    document.getElementById("result").innerHTML = event.data;
+                };
+            } else {
+                document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
+            }
+        }
+
+        function stopWorker() {
+            if (typeof (w) !== "undefined") {
+                w.terminate();
+                w = undefined;
+            }
+        }
+    </script>
+
+</body>
+</html>

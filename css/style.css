@@ -25,22 +25,23 @@ border: 0;
 
 
 .board {
-    border: 1px solid rgb(12, 99, 32);
+    /*border: 1px solid rgb(12, 99, 32);*/
     position: relative;
-    height: 800px;
-    width:  800px;
+    /*height: 200px;
+    width:  200px;*/
     
 }
 .layer {
     background-color:transparent;
     position: absolute; left: 0; top: 0;
-    height: 800px;
-    width:  800px;
+    /*height: 800px;
+    width:  800px;*/
 }
 
 .bg {
     z-index: 0;
-    background-color:#f1f7f8;
+    /*background-color:rgb(238, 253, 201);*/
+    background: url(../images/gw.jpg) ;
     /*background-color:transparent;*/
     /*border: 2px solid rgb(12, 99, 32);*/
 }

@@ -13,19 +13,20 @@
 <body>
     <center>
         <div id="board" class="board">
-            <canvas width="800" height="800" id="background"  class="layer bg"    >This device does not support HTML5 Canvas.</canvas>
-            <canvas width="800" height="800" id="theme"       class="layer theme" ></canvas>
-            <canvas width="800" height="800" id="theme2"      class="layer theme2"></canvas>
-            <canvas width="800" height="800" id="dots"        class="layer dots"  ></canvas>
-            <canvas width="800" height="800" id="lines"       class="layer lines" ></canvas>
+            <canvas width="640" height="480" id="background"  class="layer bg"    >This device does not support HTML5 Canvas.</canvas>
+            <canvas width="640" height="480" id="theme"       class="layer theme" ></canvas>
+            <canvas width="640" height="480" id="theme2"      class="layer theme2"></canvas>
+            <canvas width="640" height="480" id="dots"        class="layer dots"  ></canvas>
+            <canvas width="640" height="480" id="lines"       class="layer lines" ></canvas>
         </div>
         <br />
-        
-        <textarea id="log" class="log"></textarea>
+
+        <!--<textarea id="log" class="log"></textarea>-->
     </center>
 </body>
 </html>
 <script>
-    var nproj = new proj('board', 'background',  'theme', 'theme2', 'dots' , 'lines', 6, 6);
+
+    var nproj = new proj('board', 'background',  'theme', 'theme2', 'dots' , 'lines', 6, 6, 'wall');
 </script>
 
