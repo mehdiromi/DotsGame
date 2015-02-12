@@ -34,8 +34,9 @@ Here is a draft Class Diagram of the next version of the game at at the moment I
 
 -Added sample webworkers for background calculations 
 
-
 -Added theme background, great wall
+![http://mromi.com/dotsgame/progress/background3.png](http://mromi.com/dotsgame/progress/background3.png)
+
 ![http://mromi.com/dotsgame/progress/background2.png](http://mromi.com/dotsgame/progress/background2.png)
 
 -Added dotted lines as a hint for user between dots
